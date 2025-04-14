@@ -19,13 +19,11 @@ Array.from(document.getElementsByClassName("operator")).forEach((y) => {
         } else if (numStatus === "num2") {
             if (typeof num2 === "undefined"){
                 num2 = parseInt(display.value);
-            } else {
-                operate(num1, num2, operator);
-                display.value = result;
-                num1 = result;
-                num2 = "undefined";
-                numStatus = "num1";
             }
+            operate(num1, num2, operator);
+            display.value = result;
+            num1 = result;
+            num2 = "undefined";
         }
         operator = y.value;
         console.log(num1);
