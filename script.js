@@ -19,9 +19,6 @@ Array.from(document.getElementsByClassName("operator")).forEach((y) => {
             resetDisplay();
             numStatus = "num2";
         } else if (numStatus === "num2") {
-            if (typeof num2 === "undefined"){
-                num2 = parseInt(display.value);
-            }
             calculateResult();
         }
         operator = y.value;
@@ -34,6 +31,9 @@ Array.from(document.getElementsByClassName("operator")).forEach((y) => {
 resetButton.addEventListener("click", () => resetDisplay());
 
 function calculateResult(){
+    if (typeof num2 === "undefined"){
+        num2 = parseInt(display.value);
+    }
     operate(num1, num2, operator);
     display.value = result;
     num1 = result;
