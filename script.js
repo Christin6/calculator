@@ -23,11 +23,12 @@ Array.from(document.getElementsByClassName("operator")).forEach((y) => {
             operate(num1, num2, operator);
             display.value = result;
             num1 = result;
-            num2 = "undefined";
+            num2 = undefined;
         }
         operator = y.value;
         console.log(num1);
         console.log(num2);
+        console.log(operator);
     });
 });
 
