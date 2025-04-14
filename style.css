@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+:root {
+    --bg-color: #3b4a6b;
+    --calc-bg-color: #29344de0;
+    --fg-color-1: #22b2da;
+    --fg-color-2: #f0d43a;
+    --fg-color-3: #f23557;
+
+    --font-family: "Orbitron", sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+input {
+    border: none;
+}
+
+input[type=button] {
+    padding: 0.7rem 1.2rem;
+    border-radius: 25%;
+    font-size: 2.5rem;
+    font-family: var(--font-family);
+    font-weight: 400;
+}
+
+input[type=button]:hover {
+    filter: brightness(0.6);
+}
+
+#calculator {
+    width: 20%;
+    background-color: var(--calc-bg-color);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#keypads {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 7px;
+}
+
+#display {
+    width: 80%;
+    padding: 0.7rem 2rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+}
+
+.num {
+    background-color: var(--fg-color-1);
+}
+
+.operator {
+    background-color: var(--fg-color-2);
+}
+
+#equal,
+#reset {
+    background-color: var(--fg-color-3);
+}

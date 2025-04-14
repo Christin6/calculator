@@ -9,24 +9,31 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <input type="text" name="display area" id="display">
+        <div id="calculator">
+            <input type="text" name="display area" id="display">
 
-        <input type="button" class="num" value="1" />
-        <input type="button" class="num" value="2" />
-        <input type="button" class="num" value="3" />
-        <input type="button" class="num" value="4" />
-        <input type="button" class="num" value="5" />
-        <input type="button" class="num" value="6" />
-        <input type="button" class="num" value="7" />
-        <input type="button" class="num" value="8" />
-        <input type="button" class="num" value="9" />
-        <input type="button" class="num" value="0" />
-        <input type="button" class="operator" value="+" />
-        <input type="button" class="operator" value="-" />
-        <input type="button" class="operator" value="*" />
-        <input type="button" class="operator" value="/" />
-        <input type="button" id="equal" value="=" />
-        <input type="button" id="reset" value="reset" />
+            <div id="keypads">
+                <input type="button" class="num" value="1" />
+                <input type="button" class="num" value="2" />
+                <input type="button" class="num" value="3" />
+                <input type="button" class="operator" value="+" />
+
+                <input type="button" class="num" value="4" />
+                <input type="button" class="num" value="5" />
+                <input type="button" class="num" value="6" />
+                <input type="button" class="operator" value="-" />
+
+                <input type="button" class="num" value="7" />
+                <input type="button" class="num" value="8" />
+                <input type="button" class="num" value="9" />
+                <input type="button" class="operator" value="*" />
+
+                <input type="button" id="reset" value="C" />
+                <input type="button" class="num" value="0" />
+                <input type="button" id="equal" value="=" />                
+                <input type="button" class="operator" value="/" />
+            </div>
+        </div>
         
         <script src="script.js" async defer></script>
     </body>
