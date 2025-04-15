@@ -7,6 +7,7 @@ const numButtons = document.getElementsByClassName("num");
 const operatorButtons = document.getElementsByClassName("operator");
 const equalButton = document.getElementById("equal");
 const resetButton = document.getElementById("reset");
+const delButton = document.getElementById("delete");
 
 Array.from(numButtons).forEach((x) => {
     x.addEventListener("click", () => {
@@ -29,6 +30,10 @@ Array.from(operatorButtons).forEach((y) => {
         operator = y.value;
         debugConsole();
     });
+});
+
+delButton.addEventListener("click", () => {
+    display.value = display.value.slice(0, -1);
 });
 
 equalButton.addEventListener("click", () => {
