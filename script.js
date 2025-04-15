@@ -28,7 +28,14 @@ Array.from(document.getElementsByClassName("operator")).forEach((y) => {
     });
 });
 
-resetButton.addEventListener("click", () => resetDisplay());
+resetButton.addEventListener("click", () => {
+    resetDisplay();
+    numStatus = "num1";
+    num1 = undefined;
+    num2 = undefined;
+    operator = undefined;
+    result = 0;
+});
 
 function calculateResult(){
     if (typeof num2 === "undefined"){
