@@ -10,7 +10,11 @@ Array.from(document.getElementsByClassName("num")).forEach((x) => {
 let equalButton = document.getElementById("equal");
 let resetButton = document.getElementById("reset");
 
-equalButton.addEventListener("click", () => calculateResult());
+equalButton.addEventListener("click", () => {
+    calculateResult();
+    operator = undefined;
+    debugConsole();
+});
 
 Array.from(document.getElementsByClassName("operator")).forEach((y) => {
     y.addEventListener("click", () => {
@@ -22,9 +26,7 @@ Array.from(document.getElementsByClassName("operator")).forEach((y) => {
             calculateResult();
         }
         operator = y.value;
-        console.log(num1);
-        console.log(num2);
-        console.log(operator);
+        debugConsole();
     });
 });
 
@@ -36,6 +38,12 @@ resetButton.addEventListener("click", () => {
     operator = undefined;
     result = 0;
 });
+
+function debugConsole() {
+    console.log(num1);
+    console.log(num2);
+    console.log(operator);
+}
 
 function calculateResult(){
     if (display.value !== "") {
