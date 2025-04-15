@@ -2,21 +2,22 @@ let num1, num2, operator;
 let result = 0;
 let numStatus = "num1";
 
-let display = document.getElementById("display");
-Array.from(document.getElementsByClassName("num")).forEach((x) => {
-    x.addEventListener("click", () => addNumToDisplay(x.value));
+const display = document.getElementById("display");
+const numButtons = document.getElementsByClassName("num");
+const operatorButtons = document.getElementsByClassName("operator");
+const equalButton = document.getElementById("equal");
+const resetButton = document.getElementById("reset");
+
+Array.from(numButtons).forEach((x) => {
+    x.addEventListener("click", () => {
+        if (numStatus === "num2") {
+            resetDisplay();
+        }
+        addNumToDisplay(x.value);
+    });
 });
 
-let equalButton = document.getElementById("equal");
-let resetButton = document.getElementById("reset");
-
-equalButton.addEventListener("click", () => {
-    calculateResult();
-    operator = undefined;
-    debugConsole();
-});
-
-Array.from(document.getElementsByClassName("operator")).forEach((y) => {
+Array.from(operatorButtons).forEach((y) => {
     y.addEventListener("click", () => {
         if(numStatus === "num1") {
             num1 = parseInt(display.value);
@@ -28,6 +29,12 @@ Array.from(document.getElementsByClassName("operator")).forEach((y) => {
         operator = y.value;
         debugConsole();
     });
+});
+
+equalButton.addEventListener("click", () => {
+    calculateResult();
+    operator = undefined;
+    debugConsole();
 });
 
 resetButton.addEventListener("click", () => {
