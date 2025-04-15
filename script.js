@@ -38,13 +38,15 @@ resetButton.addEventListener("click", () => {
 });
 
 function calculateResult(){
-    if (typeof num2 === "undefined"){
-        num2 = parseInt(display.value);
+    if (display.value !== "") {
+        if (typeof num2 === "undefined"){
+            num2 = parseInt(display.value);
+        }
+        operate(num1, num2, operator);
+        display.value = result;
+        num1 = result;
+        num2 = undefined;
     }
-    operate(num1, num2, operator);
-    display.value = result;
-    num1 = result;
-    num2 = undefined;
 }
 
 function resetDisplay() {
